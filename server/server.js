@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const AddressRoute = require("./Controllers/TeamAddressController");
+const SubmissionRoute = require("./Controllers/SubmissionController");
 
 require('dotenv').config();
 const corsOptions = {
@@ -17,4 +18,5 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use('/team-contract', AddressRoute);
+app.use('/team-submission', SubmissionRoute);
 module.exports = app;

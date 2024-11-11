@@ -6,10 +6,9 @@ route.get('/:id', async (req, res) => {
             return res.status(400).json({ message: 'Team ID is required' });
         }
         const contractAddress = await AddressModel.findOne({ teamId: req.params.id });
+        console.log(contractAddress);
         if (!contractAddress) return res.status(404).json({ message: 'Contract address not found' });
-
-        res.json(contractAddress);
-
+        res.json({contractAddress: contractAddress.contractAddress});
 
     } catch (error) {
         console.error(error);

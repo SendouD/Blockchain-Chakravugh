@@ -53,7 +53,6 @@ export default function Gethash() {
     setcontract_address('');
     try {
       const response = await axios.get(`/team-contract/${teamId}`);
-
       setcontract_address(response.data.contractAddress);
     } catch (error) {
       console.error('Error fetching transaction hash:', error);

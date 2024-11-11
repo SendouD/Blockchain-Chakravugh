@@ -3,14 +3,14 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, Loader2 } from 'lucide-react'
-
+import axios from 'axios'
 const fonts = ['Orbitron', 'Rajdhani', 'Arial', 'Verdana', 'Courier', 'Georgia', 'Palatino', 'Garamond', 'Bookman', 'Comic Sans MS', 'Trebuchet MS', 'Arial Black']
 
 export default function Verify() {
   const [scrollY, setScrollY] = useState(0)
   const [letterFonts, setLetterFonts] = useState(Array(22).fill('Orbitron'))
   const [teamId, setTeamId] = useState('')
-  const [transactionHash, setTransactionHash] = useState('')
+  const [isEqual, setIsEqual] = useState(null);
   const [isLoading, setIsLoading] = useState(false)
   const [answer, setAnswer] = useState('');
   useEffect(() => {
@@ -36,17 +36,12 @@ export default function Verify() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsLoading(true)
+    setIsLoading(true);
+
     try {
-      const response = await fetch('/api/transactionhash', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ teamId,answer }),
-      })
-      const data = await response.json()
-      setTransactionHash(data.hash)
+      const response = await axios.post(`/team-submission/${teamId}`,{answer});
+      console.log(response.data.isEqual);
+      setIsEqual(response.data.isEqual);
     } catch (error) {
       console.error('Error fetching transaction hash:', error)
     }
@@ -154,15 +149,15 @@ Submit Your Answer          </motion.h3>
               </div>
             
           </motion.form>
-          {transactionHash && (
+          { isEqual!=null && (
             <motion.div
               className="mt-8 p-4 bg-purple-900 bg-opacity-50 rounded-lg"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h4 className="text-xl font-semibold mb-2 text-purple-300">Transaction Hash:</h4>
-              <p className="text-white break-all">{transactionHash}</p>
+              <h4 className="text-xl font-semibold mb-2 text-purple-300">{(isEqual) ? "Hoorayyy!" : "Noob!"}:</h4>
+              <p className={"text-white break-all " + ((isEqual) ? "text-green-600" : "text-red-600")} >{(isEqual) ? "Random number is correct!" : "Random number is Incorrect!" }</p>
             </motion.div>
           )}
         </section>
