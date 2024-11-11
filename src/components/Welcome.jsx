@@ -87,7 +87,7 @@ Home         </motion.a>
             variants={textVariants}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {'BLOCKCHAIN round '.split('').map((letter, index) => (
+            {'Hack the BLOCK '.split('').map((letter, index) => (
               <span key={index} style={{ fontFamily: letterFonts[index], display: 'inline-block' }} className="transition-all duration-100">
                 {letter}
               </span>

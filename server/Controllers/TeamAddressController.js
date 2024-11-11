@@ -17,5 +17,16 @@ route.get('/:id', async (req, res) => {
     }
 })
 
+route.post('/',async(req,res)=>{
+    try {
+        const team =new AddressModel(req.body);
+        await team.save();
+        res.json(team);
+        
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 
 module.exports = route;
