@@ -50,14 +50,17 @@ export default function Gethash() {
   };
   const getTeamHash = async () => {
     setIsLoading(true);
+    setcontract_address('');
     try {
       const response = await axios.get(`/team-contract/${teamId}`);
 
       setcontract_address(response.data.contractAddress);
     } catch (error) {
       console.error('Error fetching transaction hash:', error);
+      setcontract_address('Error in fetching team contract address');
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
