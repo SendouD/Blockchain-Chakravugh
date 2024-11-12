@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      {/* <WelcomePage /> */}
+      {/* <WelcomePagezgdfgx /> */}
       {/* <Gethash /> */}
       {/* <Verify />   */}
       <BrowserRouter basename='https://vercel.com/sendouds-projects/blockchain-chakravugh/9aig6Q331VxfAYUzNheZaU4VTD7V'>
