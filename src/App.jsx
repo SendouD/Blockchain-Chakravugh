@@ -9,7 +9,7 @@ import Verify from './components/Verify';
 import axios from 'axios';
 function App() {
   const [count, setCount] = useState(0);
-  axios.defaults.baseURL = 'http://localhost:3001';
+  axios.defaults.baseURL = 'https://hacktheblock-server.vercel.app/';
 
   return (
     <>

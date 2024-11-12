@@ -39,7 +39,11 @@ export default function Verify() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`/team-submission/${teamId}`,{answer});
+      const response = await axios.post(`/team-submission/${teamId}`,{answer},{
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       console.log(response.data.isEqual);
       setIsEqual(response.data.isEqual);
     } catch (error) {

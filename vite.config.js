@@ -7,4 +7,5 @@ export default defineConfig({
     force: true,  // Forces pre-bundling
   },
   plugins: [react()],
+  
 })
