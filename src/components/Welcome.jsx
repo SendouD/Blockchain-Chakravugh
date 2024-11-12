@@ -174,27 +174,27 @@ Home         </motion.a>
           >
             Tools that might help you
           </motion.h3>
+          <div className='flex flex-row'>
               <motion.a 
             href="https://sepolia.arbiscan.io/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="px-4 py-2 bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
+            className="px-4 py-2 bg-purple-900 rounded-full hover:bg-purple-800 transition-colors mx-2"
             initial="hidden"
             animate="visible"
             variants={textVariants}
             transition={{ duration: 0.8, delay: 0.2 }}
           >Arbitrium sepolia  </motion.a>
-          <br />
              <motion.a 
             href="https://remix.ethereum.org/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="px-4 py-2 bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
+            className="px-4 py-2 bg-purple-900 rounded-full hover:bg-purple-800 transition-colors mx-2"
             initial="hidden"
             animate="visible"
             variants={textVariants}
             transition={{ duration: 0.8, delay: 0.2 }}
-          >Remix IDE  </motion.a>
+          >Remix IDE  </motion.a></div>
               </section>
         <section className="min-h-screen flex flex-col justify-center items-center px-4 py-20">
           <motion.h3 
