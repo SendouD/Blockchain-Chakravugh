@@ -82,52 +82,55 @@ export default function Gethash() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden font-[Rajdhani]">
-      <header className="fixed top-0 left-0 right-0 z-50 p-4 bg-black bg-opacity-80">
-        <nav className="flex justify-between items-center max-w-6xl mx-auto">
-          <motion.h1
-            className="text-2xl font-bold font-[Orbitron]"
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-            transition={{ duration: 0.8 }}
-          >
-            CHAKRAVYUH
-          </motion.h1>
-          <motion.a
-            href="/"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Home{' '}
-          </motion.a>
-          <motion.a
-            href="/gethash"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Get Contract address
-          </motion.a>
-          <motion.a
-            href="/verify"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Submit your Answer
-          </motion.a>
-        </nav>
-      </header>
+     <header className="fixed top-0 left-0 right-0 z-50 p-4 bg-black bg-opacity-80">
+  <nav className="flex justify-between items-center max-w-6xl mx-auto flex-wrap sm:flex-nowrap">
+    <motion.h1
+      className="text-xl sm:text-2xl md:text-3xl font-bold font-[Orbitron]"
+      initial="hidden"
+      animate="visible"
+      variants={textVariants}
+      transition={{ duration: 0.8 }}
+    >
+      CHAKRAVYUH
+    </motion.h1>
+    <div className="flex space-x-2 sm:space-x-4 mt-4 sm:mt-0">
+      <motion.a
+        href="/"
+        rel="noopener noreferrer"
+        className="px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        Home{' '}
+      </motion.a>
+      <motion.a
+        href="/gethash"
+        rel="noopener noreferrer"
+        className="px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        Get Contract address
+      </motion.a>
+      <motion.a
+        href="/verify"
+        rel="noopener noreferrer"
+        className="px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base bg-purple-900 rounded-full hover:bg-purple-800 transition-colors"
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        Submit your Answer
+      </motion.a>
+    </div>
+  </nav>
+</header>
+
 
       <main className="pt-20">
         {/* ... (previous sections remain unchanged) ... */}
